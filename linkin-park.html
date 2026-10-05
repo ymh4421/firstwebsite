@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linkin Park</title>
+    
+
+    <!--移动端适配-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <style>
+
+      /*第一张*/
+      .background-one{
+        width:100vw;
+        height:100dvh;
+        background-image: url('7312eb33e1046550292d649796418b46.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+
+      /*第二张*/
+      .background-two{
+        width:100vw;
+        height:100dvh;
+        background-color:black;
+        background-size: cover;
+        background-position: center;
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        font-size:30px;
+        color:silver;
+        text-align:center;
+
+      }
+
+      /*第三张*/
+      .background-three{
+        width:100vw;
+        height:100dvh;
+        background-color:black;
+        background-size: cover;
+        background-position: center;
+        display:flex;
+        flex-direction: column;
+        justify-content:center;
+        text-align:center;
+      }
+
+
+        
+
+        .interactive{
+          display:flex;
+          flex-direction:row;
+          align-items:center;
+          justify-content:center;
+          gap:2rem;
+          width:100%;
+          max-width:100%;
+          PADDING:1rem;
+
+          
+        }
+        .buttons{
+          display:flex;
+          flex-direction: column;
+          gap:10rem;
+        }
+
+        .btn{
+          padding:12px 24px;
+          min-height:44px;
+          min-width:100px;
+          font-size:clamp(0.9rem,2.5vw,1.1rem);
+          font-family:inherit;
+          color:silver;
+          background:rgba(255, 255, 255, 0.15);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          border-radius: 8px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn.active {
+    background: #667eea;
+    border-color: #667eea;
+    box-shadow: 0 0 15px rgba(102, 126, 234, 0.6);
+}
+
+/* 右侧预览 */
+.preview {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+}
+
+.preview img {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    transition: opacity 0.3s;
+}
+
+.preview-desc {font-size:clamp(2rem,2.5vw,1.2rem);
+  color:silver;
+  text-align:center;
+  max-width:1200px;
+  line-height:1.6;
+  margin:0;
+  transition:opacity 0.3s
+
+}
+
+
+/*第四页*/
+.background-four{
+  width:100vw;
+  height:100dvh;
+  display:flex;
+  background-size:cover;
+  background-position:center;
+  background-image:url(_20260925105958_123_78.jpg)
+}
+
+
+/*第五页*/
+.background-five{
+  width:100vw;
+  height:100dvh;
+  display:flex;
+  background-size:cover;
+  background-position:center;
+  background-image:url(20260925112305_126_78.jpg)
+}
+
+
+
+
+
+/* 移动端上下堆叠 */
+@media (max-width: 640px){
+    .interactive {
+        flex-direction: column;
+        align-items: center;
+        gap:1.5rem;
+        width:100%;
+        padding:1 rem 0;
+    }
+    .buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .preview img {
+        max-width: 90%;
+        height:auto;
+        max-height:40vh;
+    }
+    .preview {
+    flex: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+      .background-two {
+    height: auto;
+    min-height: 100dvh;
+    padding: 80px 1rem 2rem;
+    justify-content: flex-start;
+    overflow: visible;
+}
+
+     .background-three {
+        height: auto;
+        min-height: 100dvh;
+        padding: 80px 1rem 2rem;
+        display:flex;
+        flex-direction:column;
+        justify-content:flex-start;
+        align-items:center;
+        overflow:visible;
+    }
+
+    /* 让整个页面可以纵向滚动 */
+    body {
+        overflow-y: auto;
+    }
+}
+
+        
+/* 导航栏固定在顶部 */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    z-index: 9999;
+}
+
+/* 导航链接 */
+.navbar a {
+    color: silver;
+    text-decoration: none;
+    font-size: clamp(1.25rem, 2.5vw, 1rem);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+/* 鼠标悬停 */
+.navbar a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+
+/*滚动吸附*/
+html{
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+/* 每一页 */
+.background-one,
+.background-two,
+.background-three,
+.background-four,
+.background-five{
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+
+
+    </style>
+
+
+
+
+  </head>
+
+
+
+  <body>
+
+    <!--导航-->
+    <nav class="navbar">
+      <a href="#pageone">首页</a>
+      <a href="#pagetwo">简介</a>
+      <a href="#pagethree">经典专辑</a>
+      <a href="#pagefour">画廊</a>
+    </nav>
+
+
+
+
+    <!--第二张-->
+    <div class="background-one" id="pageone"></div>
+    <div class="background-two" id="pagetwo">林肯公园<br>林肯公园是一个摇滚乐队，也是一个摇滚时代<br>他们是颠覆和革新者，将说唱，电子，金属和流行元素融入摇滚之中，掀起一阵狂潮；他们是斗士，勇于反叛内心创伤与外在压迫，批评权力体系；他们是领袖，用歌词让无数深陷泥沼之中的人们重燃希望。他们的歌拯救了无数人，但最为悲剧的是，乐队的主唱Chester Bennington没能拯救自己。长期患有抑郁症的他在2017年选择结束了自己的生命。无论如何，从一个岌岌无名，被数十次拒绝的乐队到成为一个时代的符号，他们都是传奇</div>
+
+    <!--第三张-->
+    <div class="background-three" id="pagethree">
+      <div class="interactive">
+        <div class="buttons">
+          <button class="btn" data-img="3a57dc80530d00641fb9d37282260d44.jpg" data-desc="2000年诞生，正如其名，标志着乐队的主张——混合理论">Hybrid Theory</button>
+          <button class="btn" data-img="e59bf3a6eaa8aaf5f3a0ff54a5454357(1).jpg"data-desc="延续新金属巅峰，殿堂之作">Meteora</button>
+          <button class="btn" data-img="c02f01692e7a9cf77d04c569c928cdfa.jpeg"data-desc="里程碑式的作品，标志着乐队的转型">Minutes to Midnight</button>
+          <button class="btn" data-img="107d2b99d008a0c062d3babacf4edccb.jpeg"data-desc="沉重的终章，告别之作">One More Light</button>
+        </div>
+
+
+      <div class="preview">
+        <img id="previewImg" src="3a57dc80530d00641fb9d37282260d44.jpg" alt="预览">
+        <p id="previewDesc" class="preview-desc">2000年诞生，正如其名，标志着乐队的主张——混合理论</p>
+      </div>
+    </div>
+  </div>
+
+    <div class="background-four" id="pagefour"></div>
+
+    <div class="background-five" id="pagefive"></div>
+
+
+
+<Script>
+const buttons = document.querySelectorAll('.btn');
+const previewImg = document.getElementById('previewImg');
+const previewDesc =document.getElementById('previewDesc');
+
+
+    //给每个按钮绑定点击事件
+    buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // 换图片
+            const newSrc = btn.dataset.img;
+            previewImg.src = newSrc;
+
+            //换文字
+            const newDesc = btn.dataset.desc;
+            if (newDesc) {
+                previewDesc.textContent = newDesc;
+            }
+            // 切换按钮高亮状态
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        });
+    });
+
+
+</Script>
+
+
+
+</body>
+
+
+
+</html>
